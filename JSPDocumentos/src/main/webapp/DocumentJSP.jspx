@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+    Document   : DocumentJSP
+    Created on : 20-jul-2021, 17:28:13
+    Author     : david
+-->
+
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+
+    <jsp:directive.page contentType="text/html" pageEncoding="UTF-8"/>
+    <!--Declaracioes con JSPX-->
+    <jsp:declaration>
+       private int contadorVisitas = 1;
+        String Mensaje = "espero y tengas un buen dia";
+        
+
+        </jsp:declaration>
+    <html>
+        <body>
+            <h1>Ejemplo de un documento JSpx</h1>
+            <br/>
+            <!--Ejemplo de salida de texto-->
+            <jsp:text>Saludos desde un  documento JSPx</jsp:text>
+            <br/>
+            <!--Ejemplos de exprecion con JSPx-->
+            <jsp:expression>2*2</jsp:expression>
+            
+            <br/>
+            <!--Ejemplo de scriptlet-->
+            <jsp:scriptlet>
+                String aplicationName = request.getContextPath();
+                String mensajeUsuario = "hola desde un scriptlet";
+            </jsp:scriptlet>
+            Nombre de la aplicacion:<jsp:expression>aplicationName</jsp:expression>
+            <br/>
+            Contador de visitas: 
+            <jsp:expression>this.contadorVisitas++</jsp:expression>
+            <br/>
+            <jsp:expression>mensajeUsuario +this.Mensaje </jsp:expression>
+            
+        </body>
+    </html>
+
+</jsp:root>
